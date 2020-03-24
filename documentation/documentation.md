@@ -21,6 +21,7 @@
     ..templates
         header.php
         footer.php
+        nav.php
 
 ..layout
     ..css
@@ -39,3 +40,5 @@ _____________
 index.php
 init.php
 README.md
+become-donor.php
+request-blood.php

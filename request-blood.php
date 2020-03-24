@@ -5,10 +5,9 @@
     here is included initial etcile.
 */
     include 'init.php'; // initial file
-    $template_name = 'Home FEB-BMS'; // template name
+    $template_name = 'Request For Blood - FEB-BMS'; // template name
     include $tpl . 'header.php'; // header included
 ?>
-
 
 
 <?php
