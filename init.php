@@ -4,6 +4,7 @@
     $tpl = 'includes/templates/'; // template dir
     $css = 'layout/css/'; // css dir
     $js = 'layout/js/'; // js dir
+    $config = 'configuration/';
 
     /* Menu Variable */
     $home = '/febbms/'; // home url
@@ -13,6 +14,7 @@
     $menu2val = $home.'request-blood.php';
     $menu3 = 'Become A Donor';
     $menu3val = $home.'become-donor.php';
+
 
 
 

@@ -1,0 +1,2 @@
+-- Table Create with column
+CREATE TABLE `febbms`.`becomedonor` ( `id` INT(20) NOT NULL AUTO_INCREMENT , `profileStatus` INT(2) NOT NULL DEFAULT '0' , `name` VARCHAR(200) NOT NULL , `bloodGroup` VARCHAR(50) NOT NULL , `mobile` VARCHAR(30) NULL DEFAULT NULL , `password`  VARCHAR(255) NOT NULL DEFAULT '' , `email` VARCHAR(200) NOT NULL, `dob` DATE NULL , `address` LONGTEXT NOT NULL , `socialUrl` VARCHAR(200) NOT NULL , `gender` VARCHAR(50) NOT NULL , PRIMARY KEY (`id`), UNIQUE `mobile` (`mobile`)) ENGINE = InnoDB;

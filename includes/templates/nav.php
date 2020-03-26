@@ -1,7 +1,7 @@
     <!-- Nav Main -->
-    <div class="container-fluid">
+    <div class="container-fluid sticky-top">
     <div class="row">
-        <div class="col-12 bg-dark">
+        <div class="col-12 bg-success">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <a class="navbar-brand" href="<?php echo $home; ?>">FEB-BMS</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
