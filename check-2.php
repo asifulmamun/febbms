@@ -1,3 +1,30 @@
+<?php
+/*
+    ------- HOME PAGE --------
+    This is index or main file
+    here is included initial etcile.
+*/
+    include 'init.php'; // initial file
+    $template_name = 'Home FEB-BMS'; // template name
+    include $tpl . 'header.php'; // header included
+?>
+
+<?php
+    include $config . 'conn.php'; // db connection
+    $page = !empty($_REQUEST['page']) ? $_REQUEST['page'] : 0 ;
+    $count = $page*3; // start from
+    $per_page = 3; // perpage
+?> 
+
+
+
+
+
+
+
+
+
+
 <div class="col-md-6 col-sm-12 col-xs-12">
     <!-- HEADING -->
     <div class="alert alert-success text-center mt-5" role="alert">
@@ -30,3 +57,37 @@
         $conn->close(); // db connection closs
     ?>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<center>
+    <!-- pagination -->
+    <a class="btn btn-dark" href="?page=<?php echo ($page == 0 ) ? 0 : $page-1 ?>">Previous</a>
+    <?php $page++; ?>
+    <a class="btn btn-dark" href="?page=<?php echo $page?>"> Next</a>
+</center>
+
+<?php
+/*
+    ------- FOOTER PAGE --------
+    All footer function are included to this page.
+*/
+    include $tpl . 'footer.php'; // footer included
+?>
