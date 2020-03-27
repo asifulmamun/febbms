@@ -3,7 +3,7 @@ CREATE TABLE `febbms`.`becomedonor` ( `id` INT(20) NOT NULL AUTO_INCREMENT , `pr
 
 
 -- Request for Blood Table Create with column
-CREATE TABLE `febbms`.`requestblood` ( `id` INT(30) NOT NULL AUTO_INCREMENT , `requeststatus` INT(5) NOT NULL DEFAULT '1' , `name` VARCHAR(250) NOT NULL , `bloodgroup` VARCHAR(30) NOT NULL , `blooddonatelastdate` DATE NULL DEFAULT NULL , `mobile` VARCHAR(30) NOT NULL , `requiredonatebag` INT(10) NOT NULL , `hospitalandaddress` LONGTEXT NOT NULL , `socialurl` VARCHAR(250) NOT NULL , `gender` VARCHAR(30) NOT NULL , `requestdata` DATE NULL DEFAULT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+CREATE TABLE `febbms`.`requestblood` ( `id` INT(30) NOT NULL AUTO_INCREMENT , `requeststatus` INT(5) NOT NULL DEFAULT '1' , `name` VARCHAR(250) NOT NULL , `bloodgroup` VARCHAR(30) NOT NULL , `blooddonatelastdate` DATE NULL DEFAULT NULL , `mobile` VARCHAR(30) NOT NULL , `requiredonatebag` INT(10) NOT NULL DEFAULT '1' , `hospitalandaddress` LONGTEXT NOT NULL , `socialurl` VARCHAR(250) NOT NULL , `gender` VARCHAR(30) NOT NULL , `requestdata` DATE NULL DEFAULT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
 
 
