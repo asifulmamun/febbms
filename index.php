@@ -47,7 +47,6 @@
                                     <small><?php
                                         $get_date_1 = $row['blooddonatelastdate'];
                                         $get_date_2 = $row['requestdata'];
-
                                         $date1=date_create($get_date_2);
                                         $date2=date_create($get_date_1);
                                         $diff=date_diff($date1,$date2);
@@ -57,8 +56,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <th scope="col">Name :</th>
-                            <td class="text-left" scope="col"><?php echo $row['name']; ?> (<?php echo $row['gender']; ?>)</td>
+                            <th scope="col">Name :<br><small>Mobile:</small></th>
+                            <td class="text-left" scope="col"><?php echo $row['name']; ?> (<?php echo $row['gender']; ?>)<br><small><i class="fas fa-phone-volume"></i> <?php echo $row['mobile']; ?></small></td>
                         </tr>
                         <tr>
                             <th scope="col">Requested Date :</th>
@@ -75,6 +74,10 @@
                                 $newblooddonatelastdate = date("d-M-Y", strtotime($blooddonatelastdate));
                                 echo $newblooddonatelastdate;
                             ?></span></td>
+                        </tr>
+                        <tr>
+                            <th scope="col">Hospital & Address :</th>
+                            <td class="text-left" scope="col"><small><address><?php echo $row['hospitalandaddress']; ?></address></small></td>
                         </tr>
                         <tr>
                             <td colspan="2" class="text-center" scope="col-12" >
@@ -122,7 +125,7 @@
                 <table class="table table-hover table-dark">
                     <tbody>
                         <tr>
-                            <td colspan="2" class="text-center py-3" scope="col-12" ><span class="px-3 py-2 border border-light bg-danger"><?php echo $rows['bloodGroup']; ?></span></td>
+                            <td colspan="2" class="text-center py-5" scope="col-12" ><span class="px-3 py-2 border border-light bg-danger"><?php echo $rows['bloodGroup']; ?></span></td>
                         </tr>
                         <tr>
                             <th scope="col">Name :</th>
