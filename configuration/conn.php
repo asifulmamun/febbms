@@ -1,8 +1,8 @@
 <?php
     $servername = "localhost";
-    $username = "easlabp_febbms";
+    $username = "easylabp_febbms";
     $password = "#Febbms2020";
-    $dbname = "easlabp_febbms";
+    $dbname = "easylabp_febbms";
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
