@@ -7,7 +7,7 @@
     $config = 'configuration/';
 
     /* Menu Variable */
-    $home = '/febbms/'; // home url
+    $home = '/'; // home url
     $menu1 = 'Home';
     $menu1val = $home; 
     $menu2 = 'Request For Blood';
