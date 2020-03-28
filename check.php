@@ -1,32 +1,35 @@
-<div class="col-md-6 col-sm-12 col-xs-12">
-    <!-- HEADING -->
-    <div class="alert alert-success text-center mt-5" role="alert">
-        Donor List
-    </div>
+<?php
+    // dob
+    $dob = "07-02-1998";
+    $newFormatDob = date("d-M-Y", strtotime($dob));
+    echo $newFormatDob . '<br>';
 
-    <?php
-        // Getting res_donor
-        $donor_data = $conn->prepare("SELECT * FROM `becomedonor` WHERE profileStatus = '0' ORDER BY id DESC LIMIT $count, $per_page ");
-        $donor_data->execute();
-        $res_donor = $donor_data->get_result();
-        if($res_donor->num_rows === 0) exit('Request Not Founded.');
-        while($rows = $res_donor->fetch_assoc()) {    
-    ?>
+    // converting
+    $dobD = date("d", strtotime($dob));
+    $dobM = date("m", strtotime($dob));
+    $dobY = date("y", strtotime($dob));
 
-    <!-- TABLE FOR GET res_donorS -->
-    <table class="table table-hover table-dark">
-        <tbody>
-            <tr>
-                <th scope="col">Name :</th>
-                <td class="text-left" scope="col"><?php echo $rows['name']; ?> (<?php echo $rows['gender']; ?>)</td>
-            </tr>
-        </tbody>
-    </table>
+    // allocate variable
+    $dd = $dobD;
+    $mm = $dobM;
+    $yy = $dobY;
 
-    <!-- ENDING LOOP -->
-    <?php   
-        } // while for fetch rows assoc
-        $donor_data->close(); // Getting Data
-        $conn->close(); // db connection closs
-    ?>
-</div>
+    // configuraton dob
+    $dob = $mm."/".$dd."/".$yy;
+    $arr = explode('/',$dob);
+
+    //$dateTs=date_default_timezone_set($dob); 
+    $dateTs=strtotime($dob);
+    $now=strtotime('today');
+    if(sizeof($arr)!=3);
+    if(!checkdate($arr[0],$arr[1],$arr[2]));
+    if($dateTs>=$now);
+
+    // calculate
+    $ageDays = floor(($now-$dateTs)/86400);
+    $ageYears = floor($ageDays/365);
+    $ageMonths = floor(($ageDays-($ageYears*365))/30);
+
+    // results
+    echo  $ageYears . 'y ' . $ageMonths . 'm';
+?>

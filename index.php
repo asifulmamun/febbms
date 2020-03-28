@@ -12,7 +12,7 @@
 
 
     <!-- showing result with bootstrap -->
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <!-- pagination number get with GET method and calculate -->
             <?php
@@ -40,7 +40,21 @@
                 <table class="table table-hover table-dark">
                     <tbody>
                         <tr>
-                            <td colspan="2" class="text-center" scope="col-12" ><br><span class="px-3 py-2 border border-light bg-danger"><?php echo $row['bloodgroup']; ?></span><div class="mt-2"><?php echo $row['requiredonatebag']; ?> Bags <i class="fas fa-procedures"></i></div></td>
+                            <td colspan="2" class="text-center" scope="col-12" ><br>
+                                <span class="px-3 py-2 border border-light bg-danger"><?php echo $row['bloodgroup']; ?></span>
+                                <div class="mt-2">
+                                    <?php echo $row['requiredonatebag']; ?> Bags <i class="fas fa-procedures"></i>
+                                    <small><?php
+                                        $get_date_1 = $row['blooddonatelastdate'];
+                                        $get_date_2 = $row['requestdata'];
+
+                                        $date1=date_create($get_date_2);
+                                        $date2=date_create($get_date_1);
+                                        $diff=date_diff($date1,$date2);
+                                        echo $diff->format("(%R%a) days");
+                                    ?></small>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
                             <th scope="col">Name :</th>
@@ -48,11 +62,19 @@
                         </tr>
                         <tr>
                             <th scope="col">Requested Date :</th>
-                            <td class="text-left" scope="col"><?php echo $row['requestdata']; ?></td>
+                            <td class="text-left" scope="col"><?php
+                                $requestdata = $row['requestdata']; 
+                                $newrequestdata = date("d-M-Y", strtotime($requestdata));
+                                echo $newrequestdata;
+                            ?></td>
                         </tr>
                         <tr>
-                            <th class="text-danger" scope="col">Last Date of Require Blood :</th>
-                            <td class="text-left" scope="col"><span class="px-3 py-2 border border-light bg-danger"><?php echo $row['blooddonatelastdate']; ?></span></td>
+                            <th scope="col">Last Date Require Blood :</th>
+                            <td class="text-left" scope="col"><span class="px-3 py-2 border border-light bg-danger"><?php
+                                $blooddonatelastdate = $row['blooddonatelastdate']; 
+                                $newblooddonatelastdate = date("d-M-Y", strtotime($blooddonatelastdate));
+                                echo $newblooddonatelastdate;
+                            ?></span></td>
                         </tr>
                         <tr>
                             <td colspan="2" class="text-center" scope="col-12" >
@@ -143,8 +165,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <th scope="col">Mobile | <span class="text-muted">E-mail</span> :</th>
-                            <td class="text-left" scope="col"><?php echo $rows['mobile']; ?> | <i class="text-muted">(<small><?php echo $rows['email']; ?></small>)</i></td>
+                            <th scope="col">Mobile Number | E-amil :</th>
+                            <td class="text-left" scope="col"><i class="fas fa-phone-volume"></i> <?php echo $rows['mobile']; ?> | <a class="text-light" href="mailto:<?php echo $rows['email']; ?>"><i><small><i class="far fa-envelope"></i> <?php echo $rows['email']; ?></small></i></a></td>
                         </tr>
                         <tr>
                             <th scope="col">Address :</th>

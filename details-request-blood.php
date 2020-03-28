@@ -42,7 +42,21 @@
                 <table class="table table-hover table-dark">
                     <tbody>
                         <tr>
-                            <td colspan="2" class="text-center" scope="col-12" ><br><span class="px-3 py-2 border border-light bg-danger"><?php echo $row['bloodgroup']; ?></span><div class="mt-2"><?php echo $row['requiredonatebag']; ?> Bags <i class="fas fa-procedures"></i></div></td>
+                            <td colspan="2" class="text-center" scope="col-12" ><br>
+                                <span class="px-3 py-2 border border-light bg-danger"><?php echo $row['bloodgroup']; ?></span>
+                                <div class="mt-2">
+                                    <?php echo $row['requiredonatebag']; ?> Bags <i class="fas fa-procedures"></i>
+                                    <i><?php
+                                        $get_date_1 = $row['blooddonatelastdate'];
+                                        $get_date_2 = $row['requestdata'];
+
+                                        $date1=date_create($get_date_2);
+                                        $date2=date_create($get_date_1);
+                                        $diff=date_diff($date1,$date2);
+                                        echo $diff->format("(%R%a) days");
+                                    ?></i>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
                             <th scope="col">ID :</th>
@@ -62,15 +76,23 @@
                         </tr>
                         <tr>
                             <th scope="col">Require Blood Bags :</th>
-                            <td class="text-left" scope="col"><?php echo $row['requiredonatebag']; ?></td>
+                            <td class="text-left" scope="col"><span class="px-3 py-2 border border-light bg-danger"><?php echo $row['requiredonatebag']; ?><small> Bags need in <?php echo $diff->format("(%R%a) days"); ?></small></span></td>
                         </tr>    
                         <tr>
                             <th scope="col">Requested Date :</th>
-                            <td class="text-left" scope="col"><?php echo $row['requestdata']; ?></td>
+                            <td class="text-left" scope="col"><?php
+                                $requestdata = $row['requestdata']; 
+                                $newrequestdata = date("d-M-Y", strtotime($requestdata));
+                                echo $newrequestdata;
+                            ?></td>
                         </tr>
                         <tr>
                             <th scope="col">Last Date Require Blood :</th>
-                            <td class="text-left" scope="col"><?php echo $row['blooddonatelastdate']; ?></td>
+                            <td class="text-left" scope="col"><span class="px-3 py-2 border border-light bg-danger"><?php
+                                $blooddonatelastdate = $row['blooddonatelastdate']; 
+                                $newblooddonatelastdate = date("d-M-Y", strtotime($blooddonatelastdate));
+                                echo $newblooddonatelastdate;
+                            ?></span></td>
                         </tr>
                         <tr>
                             <th scope="col">Hospital & Address :</th>
@@ -90,6 +112,9 @@
     $req_data->close(); // Getting Data
     $conn->close(); // db connection closs
 ?>
+<br>
+
+<center><a class="btn btn-dark" href="index.php">Previouse Page</a></center>
 
 <br><br>
 

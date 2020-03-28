@@ -1,4 +1,11 @@
 <?php
+    // // Local Server
+    // $servername = "localhost";
+    // $username = "root";
+    // $password = "";
+    // $dbname = "febbms";
+
+    // Live Server    
     $servername = "localhost";
     $username = "easylabp_febbms";
     $password = "#Febbms2020";
