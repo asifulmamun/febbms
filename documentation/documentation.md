@@ -10,6 +10,7 @@
 
 ..configuration
     conn.php
+    init.php
 ..data
 
 ..documenatation
@@ -36,9 +37,11 @@
         propper.min.js // propper js require for #bootstrap implimentation
     ..webfonts
         // all fontawesome and others fonts included this folder
-_____________
+_________
 index.php
 init.php
 README.md
 become-donor.php
 request-blood.php
+details-donor-blood.php
+details-request-blood.php

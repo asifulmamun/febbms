@@ -9,8 +9,6 @@
     include $tpl . 'header.php'; // header included
 ?>
 
-
-
     <!-- showing result with bootstrap -->
     <div class="container-fluid">
         <div class="row">
@@ -88,7 +86,7 @@
                         </tr>
                     </tbody>
                 </table>
-
+                
                 <!-- ENDING LOOP -->
                 <?php   
                     } // while for fetch row assoc
@@ -198,16 +196,8 @@
                     <a class="btn btn-dark" href="?pages=<?php echo $pages?>"> Next</a>
                 </center> 
             </div>
-
-
-
-
-
-
-
         </div>
     </div>
-
 
 
 
