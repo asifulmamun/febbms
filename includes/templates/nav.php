@@ -3,7 +3,15 @@
     <div class="row">
         <div class="col-12 bg-success">
         <nav class="navbar navbar-expand-lg navbar-dark">
-            <a class="navbar-brand" href="<?php echo $home; ?>">FEB-BMS</a>
+            <a class="navbar-brand" href="<?php echo $home; ?>">
+                <?php
+                    if($site_logo != ""){
+                        echo '<img style="max-width:60%;" src="' . $site_logo . '" alt="' . $site_name . '">';
+                    }else{
+                        echo $site_short_name; 
+                    }
+                ?>
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

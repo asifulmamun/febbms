@@ -1,0 +1,17 @@
+/* 
+    ----------------
+    Admin Glabal Css 
+    ----------------
+*/
+
+
+/* counter */
+.counter {
+font-size:50px;
+width:200px;
+height:200px;
+padding-top: 60px;
+}
+.praent_counter span {
+    font-size: 20px;
+}

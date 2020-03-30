@@ -5,27 +5,25 @@
     here is included initial etcile.
 */
     include 'init.php'; // initial file
-    $template_name = 'Details of Request Blood'; // template name
+    $template_name = 'Details of Donar Blood'; // template name
     include $tpl . 'header.php'; // header included
 ?>
 
 
     <!-- Heading -->
     <div class="container">
-        <div class="row">
-            <div class="col-1"></div>
+        <div class="row justify-content-md-center">
             <div class="col-10">
                 <div class="alert alert-success text-center mt-5" role="alert">
-                    Details of Requeseter (Who need blood)
+                    <?php echo $template_name; ?>
                 </div>
             </div>
-            <div class="col-1"></div>
         </div>
     </div><!-- Heading -->
 
 <?php
     $id = $_GET['id']; // get id
-    include $config . 'conn.php'; // db connection
+    // include $config . 'conn.php'; // db connection
     
     // Getting Result
     $req_data = $conn->prepare("SELECT * FROM `becomedonor` WHERE id = '$id'");
@@ -98,17 +96,13 @@
                                 ?>)</small></i>
                             </td>
                         </tr>
-
-
-
-
                         <tr>
                             <th scope="col">Address :</th>
                             <td class="text-left" scope="col"><?php echo $row['address']; ?></td>
                         </tr>
                         <tr>
                             <th scope="col">Social Url :</th>
-                            <td class="text-left" scope="col"><a href="<?php echo $row['socialUrl']; ?>"><?php echo $row['socialUrl']; ?></a></td>
+                            <td class="text-left" scope="col"><a class="text-light" href="<?php echo $row['socialUrl']; ?>"><?php echo $row['socialUrl']; ?></a></td>
                         </tr>
                     </tbody>
                 </table>  

@@ -1,35 +1,57 @@
 <?php
-    // dob
-    $dob = "07-02-1998";
-    $newFormatDob = date("d-M-Y", strtotime($dob));
-    echo $newFormatDob . '<br>';
+/*
+    ------- HOME PAGE --------
+    This is index or main file
+    here is included initial etcile.
+*/
+    include 'init.php'; // initial file
+    $template_name = 'Details of Request Blood'; // template name
+    include $tpl . 'header.php'; // header included
+?>
 
-    // converting
-    $dobD = date("d", strtotime($dob));
-    $dobM = date("m", strtotime($dob));
-    $dobY = date("y", strtotime($dob));
 
-    // allocate variable
-    $dd = $dobD;
-    $mm = $dobM;
-    $yy = $dobY;
+    <!-- Heading -->
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-10">
+                <div class="alert alert-success text-center mt-5" role="alert">
+                    <?php echo $template_name; ?>
+                </div>
+            </div>
+        </div>
+    </div><!-- Heading -->
 
-    // configuraton dob
-    $dob = $mm."/".$dd."/".$yy;
-    $arr = explode('/',$dob);
+<?php
+    include $config . 'conn.php'; // db connection
+    
+    // Getting Result
+    $req_data = $conn->prepare("SELECT * FROM `requestblood`");
+    $req_data->execute();
+    $result = $req_data->get_result();
+    if($result->num_rows === 0) exit('Request Not Founded.');
+    
+    echo $result->num_rows;
 
-    //$dateTs=date_default_timezone_set($dob); 
-    $dateTs=strtotime($dob);
-    $now=strtotime('today');
-    if(sizeof($arr)!=3);
-    if(!checkdate($arr[0],$arr[1],$arr[2]));
-    if($dateTs>=$now);
 
-    // calculate
-    $ageDays = floor(($now-$dateTs)/86400);
-    $ageYears = floor($ageDays/365);
-    $ageMonths = floor(($ageDays-($ageYears*365))/30);
+    // while($row = $result->fetch_assoc()) {
+    //     echo $row['id'];
+    // } // while for fetch row assoc
 
-    // results
-    echo  $ageYears . 'y ' . $ageMonths . 'm';
+
+    $req_data->close(); // Getting Data
+    $conn->close(); // db connection closs
+
+?>
+<br>
+
+<center><a class="btn btn-dark" href="index.php">Previouse Page</a></center>
+
+<br><br>
+
+<?php
+/*
+    ------- FOOTER PAGE --------
+    All footer function are included to this page.
+*/
+    include $tpl . 'footer.php'; // footer included
 ?>

@@ -1,15 +1,15 @@
 <?php
-    // Local Server
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "febbms";
-
-    // // Live Server    
+    // // Local Server
     // $servername = "localhost";
-    // $username = "easylabp_febbms";
-    // $password = "#Febbms2020";
-    // $dbname = "easylabp_febbms";
+    // $username = "root";
+    // $password = "";
+    // $dbname = "febbms";
+
+    // Live Server    
+    $servername = "localhost";
+    $username = "easylabp_febbms";
+    $password = "#Febbms2020";
+    $dbname = "easylabp_febbms";
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -18,6 +18,9 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-    
-    include 'init.php';
+
+    $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
+
+    echo $actual_link;
+
 ?>
