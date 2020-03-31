@@ -127,5 +127,6 @@
 
         $stmts->close(); // pass
         // $conn->close(); // db connection closs
+        exit();
     }
 ?>
