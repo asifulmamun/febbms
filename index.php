@@ -14,7 +14,7 @@
         <div class="row">
             <!-- pagination number get with GET method and calculate -->
             <?php
-                // include $config . 'conn.php'; // db connection
+                include $config . 'conn.php'; // db connection
                 $page = !empty($_REQUEST['page']) ? $_REQUEST['page'] : 0 ;
                 $count = $page*3; // start from
                 $per_page = 3; // perpage

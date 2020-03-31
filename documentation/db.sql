@@ -6,6 +6,5 @@ CREATE TABLE `febbms`.`becomedonor` ( `id` INT(20) NOT NULL AUTO_INCREMENT , `pr
 CREATE TABLE `febbms`.`requestblood` ( `id` INT(30) NOT NULL AUTO_INCREMENT , `requeststatus` INT(5) NOT NULL DEFAULT '1' , `name` VARCHAR(250) NOT NULL , `bloodgroup` VARCHAR(30) NOT NULL , `blooddonatelastdate` DATE NULL DEFAULT NULL , `mobile` VARCHAR(30) NOT NULL , `requiredonatebag` INT(10) NOT NULL DEFAULT '1' , `hospitalandaddress` LONGTEXT NOT NULL , `socialurl` VARCHAR(250) NOT NULL , `gender` VARCHAR(30) NOT NULL , `requestdata` DATE NULL DEFAULT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
 
-
--- query
-SELECT * FROM `requestblood` ORDER BY id DESC LIMIT 1, 2
+-- Users Table
+CREATE TABLE `febbms`.`users` ( `id` INT(30) NOT NULL AUTO_INCREMENT , `username` VARCHAR(250) NOT NULL , `pass` VARCHAR(250) NOT NULL , `name` VARCHAR(250) NOT NULL , `mobile` VARCHAR(30) NULL DEFAULT NULL , `email` VARCHAR(250) NULL DEFAULT NULL , `role` INT(10) NOT NULL DEFAULT '0' , `details` LONGTEXT NOT NULL , PRIMARY KEY (`id`), UNIQUE `email` (`email`), UNIQUE `mobile` (`mobile`), UNIQUE `username` (`username`)) ENGINE = InnoDB;

@@ -114,7 +114,7 @@
         if(empty($_POST['name']) OR empty($_POST['mobile'])) exit('<link rel="stylesheet" href="https://wowjs.uk/css/libs/animate.css"><div class="container"><div class="row wow pulse animated" data-wow-delay="300ms" data-wow-iteration="infinite" data-wow-duration="2s"><div class="col-1"></div><div class="col-10"><div class="alert bg-dark text-light text-center" role="alert">Please fill up your Name and Mobile Number.</div></div><div class="col-1"></div></div></div><script>alert("Please fill up your Name and Mobile Number.");</script><script src="https://wowjs.uk/dist/wow.min.js"></script><script>new WOW().init();</script>');
 
 
-        // include $config . 'conn.php'; // db connection
+        include $config . 'conn.php'; // db connection
 
         // Inserting Data
         $stmt = $conn->prepare("INSERT INTO `requestblood` (`name`, `bloodgroup`, `blooddonatelastdate`, `mobile`, `requiredonatebag`, `hospitalandaddress`, `socialurl`, `gender`, `requestdata`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");

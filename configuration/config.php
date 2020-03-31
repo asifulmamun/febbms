@@ -6,7 +6,7 @@
     $site_description = 'Donate Blood | Take Blood | Save Life';
 
 
-    include 'conn.php'; // db connection
+    // include 'conn.php'; // db connection
 
     // Counter Functin to Admin index page how many id or row
     function countDonar($tablename){
@@ -22,6 +22,4 @@
         $req_data->close(); // Getting Data
         $conn->close(); // db connection closs
       }
-
-
 ?>

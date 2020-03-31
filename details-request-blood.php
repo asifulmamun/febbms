@@ -23,7 +23,7 @@
 
 <?php
     $id = $_GET['id']; // get id
-    // include $config . 'conn.php'; // db connection
+    include $config . 'conn.php'; // db connection
     
     // Getting Result
     $req_data = $conn->prepare("SELECT * FROM `requestblood` WHERE id = '$id'");

@@ -8,13 +8,13 @@
     $config = '../configuration/';
 
     /* Menu Variable */
-    $home = '/'; // home url
+    $home = '/admin/'; // home url
     $menu1 = 'Home';
     $menu1val = $home; 
     $menu2 = 'Request For Blood';
-    $menu2val = $home.'request-blood.php';
-    $menu3 = 'Become A Donor';
-    $menu3val = $home.'become-donor.php';
+    $menu2val = $home.'#';
+    $menu3 = 'Log Out';
+    $menu3val = $home.'index.php?do=logout';
 
 
 

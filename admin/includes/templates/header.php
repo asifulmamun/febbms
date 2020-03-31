@@ -1,3 +1,12 @@
+<?php
+    session_start();
+
+    // no logged redirect login page
+    if(!isset($_SESSION['id'])){
+        // redirecting dashboard
+        header('Location: login.php');
+    }
+?>
 <!doctype html>
 <html lang="en">
 <head>
