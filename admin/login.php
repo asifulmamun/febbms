@@ -1,4 +1,4 @@
-<?php
+<?php @session_start();
 /*
     ------- HOME PAGE --------
     This is index or main file
@@ -114,8 +114,7 @@
         }
         // get assoc results
         $row = $ress->fetch_assoc();
-        // 
-        session_start();
+
         $_SESSION['id'] = $row['id'];
         $_SESSION['name'] = $row['name'];
         $_SESSION['role'] = $row['role'];
