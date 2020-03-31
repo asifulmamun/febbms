@@ -5,7 +5,7 @@
     if($_SERVER['REQUEST_METHOD'] == 'GET'){
         if(isset($_GET['do'])){
            if($_GET['do'] == "logout"){
-            session_destroy();
+                session_destroy();
             } 
         }
     }else{

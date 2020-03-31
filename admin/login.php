@@ -93,8 +93,8 @@
         $stmt->execute();
         $res = $stmt->get_result();
         if($res->num_rows === 0){
-            // header('Location: login.php');
-            // echo '<script>alert("UME not matched.")</script>';
+            session_destroy();
+            header( "refresh:3; url=login.php" );
         }
         // get assoc resutls
         $rows = $res->fetch_assoc();
@@ -108,22 +108,22 @@
         $stmts->execute();
         $ress = $stmts->get_result();
         if($ress->num_rows === 0){
-            // session_destroy();
+            session_destroy();
             header( "refresh:3; url=login.php" ); 
-            echo '<script>document.getElementById("notice").innerHTML = "<br>Username and Password not matched.<br><br>";</script>';
         }
         // get assoc results
         $row = $ress->fetch_assoc();
 
-        $_SESSION['id'] = $row['id'];
-        $_SESSION['name'] = $row['name'];
-        $_SESSION['role'] = $row['role'];
-        echo $_SESSION['id'];
-        echo $_SESSION['name'];
-        echo $_SESSION['role'];
-        header("Location: dashboard.php");
+            // Session Create and redirect
+            $_SESSION['id'] = $row['id'];
+            $_SESSION['name'] = $row['name'];
+            $_SESSION['role'] = $row['role'];
+            echo $_SESSION['id'];
+            echo $_SESSION['name'];
+            echo $_SESSION['role'];
+            header("Location: dashboard.php");
 
         $stmts->close(); // pass
-        // $conn->close(); // db connection closs
+        $conn->close(); // db connection closs
     }
 ?>
