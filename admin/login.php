@@ -83,6 +83,7 @@
 </html>
 
 <?php
+    ob_start();
     include $config . 'conn.php'; // db connection
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -122,7 +123,7 @@
         echo $_SESSION['id'];
         echo $_SESSION['name'];
         echo $_SESSION['role'];
-        header( "refresh:3; url=check.php" );
+        header("Location: check.php");
 
         $stmts->close(); // pass
         // $conn->close(); // db connection closs
