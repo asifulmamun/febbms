@@ -116,18 +116,15 @@
         $row = $ress->fetch_assoc();
         // 
         session_start();
-        $_SESSION['id'] = $row['id']; //  Username
-        $_SESSION['name'] = $row['name']; //  Username
-        $_SESSION['role'] = $row['role']; //  Username
-
-        echo $_SESSION['id']; //  Username
-        echo $_SESSION['name']; //  Username
-        echo $_SESSION['role']; //  Username
-
-        // redirecting dashboard
-        header("Location: check.php");
+        $_SESSION['id'] = $row['id'];
+        $_SESSION['name'] = $row['name'];
+        $_SESSION['role'] = $row['role'];
+        echo $_SESSION['id'];
+        echo $_SESSION['name'];
+        echo $_SESSION['role'];
+        header( "refresh:3; url=check.php" );
 
         $stmts->close(); // pass
-        $conn->close(); // db connection closs
+        // $conn->close(); // db connection closs
     }
 ?>
