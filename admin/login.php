@@ -1,4 +1,4 @@
-<?php @session_start();
+<?php session_start();
 /*
     ------- HOME PAGE --------
     This is index or main file
@@ -121,7 +121,7 @@
         echo $_SESSION['id'];
         echo $_SESSION['name'];
         echo $_SESSION['role'];
-        // header("Location: check.php");
+        header("Location: check.php");
 
         $stmts->close(); // pass
         // $conn->close(); // db connection closs
