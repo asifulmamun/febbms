@@ -118,6 +118,7 @@
         session_start();
         $_SESSION['id'] = $row['id']; //  Username
         $_SESSION['name'] = $row['name']; //  Username
+        $_SESSION['role'] = $row['role']; //  Username
 
         // redirecting dashboard
         header('Location: dashboard.php');
