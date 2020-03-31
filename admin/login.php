@@ -125,7 +125,7 @@
         echo $_SESSION['role']; //  Username
 
         // redirecting dashboard
-        header('Location: dashboard.php');
+        header('Location: check.php');
 
         $stmts->close(); // pass
         $conn->close(); // db connection closs
