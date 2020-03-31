@@ -120,6 +120,10 @@
         $_SESSION['name'] = $row['name']; //  Username
         $_SESSION['role'] = $row['role']; //  Username
 
+        echo $_SESSION['id']; //  Username
+        echo $_SESSION['name']; //  Username
+        echo $_SESSION['role']; //  Username
+
         // redirecting dashboard
         header('Location: dashboard.php');
 
