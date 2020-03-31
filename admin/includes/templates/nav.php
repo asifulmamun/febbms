@@ -18,6 +18,9 @@
                     <a class="nav-link" href="<?php echo $menu1val; ?>"><?php echo $menu1; ?><span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $menu1_1val; ?>"><?php echo $menu1_1; ?></a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="<?php echo $menu2val; ?>"><?php echo $menu2; ?></a>
                 </li>
                 <li class="nav-item">

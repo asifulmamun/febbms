@@ -7,8 +7,8 @@
     </div>
     <?php
         $page = !empty($_REQUEST['page']) ? $_REQUEST['page'] : 0 ;
-        $count = $page*3; // start from
-        $per_page = 3; // perpage
+        $count = $page*10; // start from
+        $per_page = 10; // perpage
 
         // Getting Result
         $req_data = $conn->prepare("SELECT * FROM `requestblood`  WHERE requeststatus = '1' ORDER BY id DESC LIMIT $count, $per_page ");
@@ -23,6 +23,11 @@
           <th scope="col">Name</th>
           <th scope="col">Mobile</th>
           <th scope="col">Blood Group</th>
+          <th scope="col">
+            <small>
+              Registration Date<br>Last Date
+            </small>
+          </th>
           <th scope="col">Control</th>
         </tr>
       </thead>
@@ -35,7 +40,24 @@
           <td><?php echo $row['name'];?></td>
           <td><?php echo $row['mobile'];?></td>
           <td><?php echo $row['bloodgroup'];?></td>
-          <td><a class="btn btn-success" href="edit-req.php?action=edit&id=<?php echo $row['id'];?>">Details & Edit</a>  <a class="btn btn-danger" href="edit-req.php?action=delete&id=<?php echo $row['id'];?>">Delete</a></td>
+          <td>
+            <small>
+              <?php
+                $requestdata = $row['requestdata']; 
+                $newrequestdata = date("d-M-Y", strtotime($requestdata));
+                echo $newrequestdata;
+              ?>
+              <br>
+              <span class="px-1 py-1 border border-light bg-danger">
+              <?php
+                $blooddonatelastdate = $row['blooddonatelastdate']; 
+                $newblooddonatelastdate = date("d-M-Y", strtotime($blooddonatelastdate));
+                echo $newblooddonatelastdate;
+              ?>
+              </span>
+            </small>
+          </td>
+          <td><a class="btn btn-success" href="edit-details.php?action=editReq&id=<?php echo $row['id'];?>">Details</a>  <a class="btn btn-danger" href="edit-details.php?action=deleteReq&id=<?php echo $row['id'];?>">Delete</a></td>
         </tr>
         <!-- ENDING LOOP -->
         <?php   

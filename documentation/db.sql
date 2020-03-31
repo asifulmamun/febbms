@@ -8,3 +8,6 @@ CREATE TABLE `febbms`.`requestblood` ( `id` INT(30) NOT NULL AUTO_INCREMENT , `r
 
 -- Users Table
 CREATE TABLE `febbms`.`users` ( `id` INT(30) NOT NULL AUTO_INCREMENT , `username` VARCHAR(250) NOT NULL , `pass` VARCHAR(250) NOT NULL , `name` VARCHAR(250) NOT NULL , `mobile` VARCHAR(30) NULL DEFAULT NULL , `email` VARCHAR(250) NULL DEFAULT NULL , `role` INT(10) NOT NULL DEFAULT '0' , `details` LONGTEXT NOT NULL , PRIMARY KEY (`id`), UNIQUE `email` (`email`), UNIQUE `mobile` (`mobile`), UNIQUE `username` (`username`)) ENGINE = InnoDB;
+
+
+

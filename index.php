@@ -112,7 +112,7 @@
                     $per_pages = 3; // perpage
 
                     // Getting res_donor
-                    $donor_data = $conn->prepare("SELECT * FROM `becomedonor` WHERE profileStatus = '0' ORDER BY id DESC LIMIT $counts, $per_pages ");
+                    $donor_data = $conn->prepare("SELECT * FROM `becomedonor` WHERE profileStatus = '1' ORDER BY id DESC LIMIT $counts, $per_pages ");
                     $donor_data->execute();
                     $res_donor = $donor_data->get_result();
                     if($res_donor->num_rows === 0) exit('Donor List Not Founded.<br><a class="btn btn-dark" href="index.php">Home</a>');
