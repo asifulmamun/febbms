@@ -109,7 +109,7 @@
         $ress = $stmts->get_result();
         if($ress->num_rows === 0){
             // session_destroy();
-            // header( "refresh:3; url=login.php" ); 
+            header( "refresh:3; url=login.php" ); 
             echo '<script>document.getElementById("notice").innerHTML = "<br>Username and Password not matched.<br><br>";</script>';
         }
         // get assoc results
@@ -121,7 +121,7 @@
         echo $_SESSION['id'];
         echo $_SESSION['name'];
         echo $_SESSION['role'];
-        header("Location: check.php");
+        header("Location: dashboard.php");
 
         $stmts->close(); // pass
         // $conn->close(); // db connection closs
