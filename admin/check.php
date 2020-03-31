@@ -1,6 +1,4 @@
-<?php
-
-    session_start();
+<?php session_start();
 
     echo $_SESSION['id']; //  Username
     echo $_SESSION['name']; //  Username

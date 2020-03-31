@@ -1,5 +1,4 @@
-<?php
-    session_start();
+<?php session_start();
 
     // no logged redirect login page
     if(!isset($_SESSION['id'])){
