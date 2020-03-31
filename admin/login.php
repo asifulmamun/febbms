@@ -108,7 +108,7 @@
         $stmts->execute();
         $ress = $stmts->get_result();
         if($ress->num_rows === 0){
-            session_destroy();
+            // session_destroy();
             header( "refresh:3; url=login.php" ); 
             echo '<script>document.getElementById("notice").innerHTML = "<br>Username and Password not matched.<br><br>";</script>';
         }
