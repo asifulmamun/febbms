@@ -9,7 +9,7 @@
     include $tpl . 'header.php'; // header included
     include $config . 'conn.php'; // db connection
 
-    if(!isset($_SESSION['id'])){
+    if($_SESSION['id'] == 0){
       echo '<script type="text/javascript">window.location.replace("login.php");</script>';
     }
 ?>
@@ -42,7 +42,6 @@
 
 <?php
     $id = $_SESSION['id']; // get id
-    include $config . 'conn.php'; // db connection
 
     // Getting Result
     $req_data = $conn->prepare("SELECT * FROM `becomedonor` WHERE id = '$id'");

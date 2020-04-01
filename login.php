@@ -127,7 +127,7 @@
             $_SESSION['id'] = $row['id'];
             $_SESSION['name'] = $row['name'];
             $_SESSION['profileStatus'] = $row['profileStatus'];
-        
+            
             echo '<script type="text/javascript">window.location.replace("dashboard.php");</script>';
 
         $stmts->close(); // pass

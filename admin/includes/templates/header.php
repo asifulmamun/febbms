@@ -1,7 +1,7 @@
 <?php session_start();
 
     // no logged redirect login page
-    if(!isset($_SESSION['id'])){
+    if(!isset($_SESSION['role'])){
         // redirecting dashboard
         header('Location: login.php');
     }
