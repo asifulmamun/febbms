@@ -26,6 +26,25 @@
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo $menu3val; ?>"><?php echo $menu3; ?></a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo $menu3_1val; ?>"><?php echo $menu3_1; ?></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo $menu4val; ?>"><?php echo $menu4; ?></a>
+                    </li>
+                   <li class="nav-item">
+                        <a class="nav-link" href="<?php echo $menu5val; ?>"><?php echo $menu5; ?></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo $menu5_1val; ?>"><?php echo $menu5_1; ?></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo $menu5_2val; ?>"><?php echo $menu5_2; ?></a>
+                    </li>
+                    <!-- login logout -->
+                   <li class="nav-item">
+                        <a class="nav-link" href="<?php echo $menu6val; ?>"><?php echo $menu6; ?></a>
+                    </li>
                 </ul>
             </div>
         </nav>

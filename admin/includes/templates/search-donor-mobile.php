@@ -37,7 +37,7 @@
         $donor_data = $conn->prepare("SELECT * FROM `becomedonor` WHERE `mobile` LIKE '%$keyword%'");
         $donor_data->execute();
         $res_donor = $donor_data->get_result();
-        if($res_donor->num_rows === 0) exit('Donor List Not Founded.<br><a class="btn btn-dark" href="dashboard.php">Dashboard</a>');
+        if($res_donor->num_rows === 0) exit('Search Please.<br><a class="btn btn-dark" href="dashboard.php">Dashboard</a>');
     ?>
     <table class="table table-dark">
       <thead>

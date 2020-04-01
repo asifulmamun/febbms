@@ -5,7 +5,7 @@
     here is included initial etcile.
 */
     include 'init.php'; // initial file
-    $template_name = 'Dashboard'; // template name
+    $template_name = 'Search'; // template name
     include $tpl . 'header.php'; // header included
     include $config . 'conn.php'; // db connection
 ?>
