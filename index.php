@@ -67,11 +67,11 @@
                         </tr>
                         <tr>
                             <th scope="col">Last Date Require Blood :</th>
-                            <td class="text-left" scope="col"><span class="px-3 py-2 border border-light bg-danger"><?php
+                            <td class="text-left" scope="col"><small><span class="px-2 py-1 border border-light bg-danger"><?php
                                 $blooddonatelastdate = $row['blooddonatelastdate']; 
                                 $newblooddonatelastdate = date("d-M-Y", strtotime($blooddonatelastdate));
                                 echo $newblooddonatelastdate;
-                            ?></span></td>
+                            ?></span></small></td>
                         </tr>
                         <tr>
                             <th scope="col">Hospital & Address :</th>
