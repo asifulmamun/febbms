@@ -88,6 +88,10 @@
                             <th scope="col">Social Url :</th>
                             <td class="text-left" scope="col"><a class="text-light" href="<?php echo $row['socialurl']; ?>"><?php echo $row['socialurl']; ?></a></td>
                         </tr>
+                        <tr>
+                            <th scope="col">Action</th>
+                            <td class="text-left" scope="col"><a class="btn btn-danger py-1 px-2" href="edit-details.php?action=deleteReq&id=<?php echo $row['id']; ?>">Delete</a></td> 
+                        </tr>
                     </tbody>
                 </table>  
             </div>

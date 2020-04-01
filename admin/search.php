@@ -24,6 +24,7 @@
 
 
 <?php
+    // search box show
     if(isset($_GET['do']) AND isset($_GET['by'])){
         
         if($_GET['do'] == 'req' AND $_GET['by'] == 'name'){
@@ -44,18 +45,9 @@
 
         elseif($_GET['do'] == 'donor' AND $_GET['by'] == 'email'){
             include $tpl . 'search-donor-email.php';
-        }
+        }     
+    } // search box show
 
-
-
-
-
-
-
-
-
-        
-    }
 
 ?>
 

@@ -110,6 +110,10 @@
                             <td class="text-left" scope="col">
                             <input name="password2" type="password" class="form-control" id="inputPassword2" placeholder="Re-type Password">                            </td>
                         </tr>
+                        <tr>
+                            <th scope="col">Action</th>
+                            <td class="text-left" scope="col"><a class="btn btn-danger py-1 px-2" href="edit-details.php?action=deleteDonor&id=<?php echo $row['id']; ?>">Delete Donor</a></td> 
+                        </tr>
                     </tbody>
                 </table>  
             </div>
