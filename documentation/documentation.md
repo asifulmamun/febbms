@@ -5,9 +5,11 @@
     #Database Create
         database name : febbms
 
-        copy documentation > #db.sql file all query and run it on database query for create table row and column etc.
+        copy (documentation > #db.sql) file all query and run it on database query for create table row and column etc.
+        or import (documentation > #db.sql) to your database but database name must febbms.
+    
+    #After database create then Input some data mannually to users table (password sha1) encryption.
 
-        Input some data mannually to users table (password sha1) encryption.
     
     
 
