@@ -7,7 +7,7 @@
     $config = 'configuration/';
 
     /* Menu Variable */
-    $home = '/'; // home url
+    $home = '/'; // home url (if root folder '/' if other folder '/othter-Folder/')
     $menu1 = 'Home';
     $menu1val = $home; 
     $menu2 = 'Request For Blood';

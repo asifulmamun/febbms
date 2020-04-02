@@ -2,7 +2,7 @@
     // web link
     $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
 
-    if($actual_link == 'http://blood.easylabpic.com'){
+    if($actual_link == 'http://blood.easylabpic.com'){ // live server full domain address
         // Live Server    
         $servername = "localhost";
         $username = "easylabp_febbms";
@@ -15,8 +15,14 @@
         $password = "";
         $dbname = "febbms";
     }
-    
 
+
+    // // Local Server
+    // $servername = "localhost"; // datqabase servername
+    // $username = "root"; // database username
+    // $password = ""; // database password
+    // $dbname = "febbms"; // database name
+    
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
 

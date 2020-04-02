@@ -8,7 +8,7 @@
     $config = '../configuration/';
 
     /* Menu Variable */
-    $home = '/admin/'; // home url
+    $home = '/admin/'; // home url (if root folder '/admin/' if other folder '/othter-Folder/admin/')
     $menu1 = 'Dashboard';
     $menu1val = $home; 
     $menu1_1 = 'Search';
@@ -17,8 +17,5 @@
     $menu2val = $home.'unpublished.php';
     $menu3 = 'Log Out';
     $menu3val = $home.'index.php?do=logout';
-
-
-
 
 ?>
