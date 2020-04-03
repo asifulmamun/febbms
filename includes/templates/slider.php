@@ -1,4 +1,4 @@
-<!-- <div class="container-fluid mt-5"> -->
+<div class="container-fluid mt-5">
     <div class="row justify-content-md-center">
         <div class="col-md-12">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -38,7 +38,7 @@
             </div>
         </div>
     </div>
-<!-- </div> -->
+</div>
 
 <style>
     .slider-zi-1 h5{
