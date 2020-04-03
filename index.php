@@ -9,6 +9,9 @@
     include $tpl . 'header.php'; // header included
 ?>
 
+    <!-- slider -->
+    <?php include $tpl . 'slider.php'; ?>
+
     <!-- showing result with bootstrap -->
     <div class="container-fluid">
         <div class="row">
@@ -23,7 +26,7 @@
             <div class="col-md-6 col-sm-12 col-xs-12">
                 <!-- HEADING -->
                 <div class="alert alert-success text-center mt-5" role="alert">
-                    Blood Requested List
+                   <h3>Blood Requested List</h3>
                 </div>
 
                 <?php
@@ -104,7 +107,7 @@
             <div class="col-md-6 col-sm-12 col-xs-12">
                 <!-- HEADING -->
                 <div class="alert alert-success text-center mt-5" role="alert">
-                    Donor List
+                    <h3>Donor List</h3>
                 </div>
 
                 <?php
@@ -199,7 +202,7 @@
             </div>
         </div>
     </div>
-
+    <br><br>
 
 
 <?php

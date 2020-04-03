@@ -8,7 +8,7 @@
     $config = '../configuration/';
 
     /* Menu Variable */
-    $home = '/admin/'; // home url (if root folder '/admin/' if other folder '/othter-Folder/admin/')
+    $home = '/febbms/admin/'; // home url (if root folder '/admin/' if other folder '/othter-Folder/admin/')
     $menu1 = 'Dashboard';
     $menu1val = $home; 
     $menu1_1 = 'Search';

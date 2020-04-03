@@ -2,12 +2,13 @@
 
     /* Linkup DIR Header.php included */
     $tpl = 'includes/templates/'; // template dir
+    $img = 'layout/img/'; // image dir
     $css = 'layout/css/'; // css dir
     $js = 'layout/js/'; // js dir
     $config = 'configuration/';
 
     /* Menu Variable */
-    $home = '/'; // home url (if root folder '/' if other folder '/othter-Folder/')
+    $home = '/febbms/'; // home url (if root folder '/' if other folder '/othter-Folder/')
     $menu1 = 'Home';
     $menu1val = $home; 
     $menu2 = 'Request For Blood';
