@@ -64,7 +64,7 @@
       <?php
 
           // Getting res_donor
-          $donor_data = $conn->prepare("SELECT * FROM `becomedonor` WHERE `bloodGroup` LIKE '%$keyword%'");
+          $donor_data = $conn->prepare("SELECT `id`, `name`, `mobile`, `email`, `bloodgroup` FROM `becomedonor` WHERE `bloodGroup` LIKE '%$keyword%' AND `profileStatus` LIKE 1");
           $donor_data->execute();
           $res_donor = $donor_data->get_result();
           if($res_donor->num_rows === 0) exit('Please Search.<br><a class="btn btn-dark" href="dashboard.php">Dashboard</a>');
