@@ -4,8 +4,8 @@
 
     // Local Server
     $servername = "localhost"; // datqabase servername
-    $username = "root"; // database username
-    $password = ""; // database password
+    $username = "asifulmamun"; // database username
+    $password = "1998"; // database password
     $dbname = "febbms"; // database name
     
     // Create connection

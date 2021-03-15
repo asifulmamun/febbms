@@ -1,1 +1,8 @@
+# connection information
 configuration/conn.php
+
+# variable
+init.php
+
+# admin initital variable
+admin/init.php
