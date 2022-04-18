@@ -63,7 +63,7 @@ require_once $tpl_global . 'header.php'; // header - config.php & conn.php inclu
                         <tr>
                             <th>Mobile Number | E-mail</th>
                             <td>:</td>
-                            <td><a href="tel:<?php echo $row['mobile']; ?>"><?php echo $row['mobile']; ?></a>&nbsp;|&nbsp;<a class="text-light" href="mailto:<?php echo $row['email']; ?>"><i><small><?php echo $row['email']; ?></small></i></a></td>
+                            <td><a href="#Request">Request for Number</a>&nbsp;|&nbsp;<a class="text-light" href="mailto:<?php echo $row['email']; ?>"><i><small><?php echo $row['email']; ?></small></i></a></td>
                         </tr>
                         <tr>
                             <th>Blood Group</th>

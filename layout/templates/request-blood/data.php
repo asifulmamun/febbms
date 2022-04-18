@@ -22,10 +22,18 @@
     }
     $gender =  $_POST['gender'];
 
+    // Password
+    $pass =  $_POST['pass'];
+    $repass =  $_POST['repass'];
+    if($pass == $repass){
+        $password = md5($pass);
+    }else{
+        $password = null;
+    }
 
     /* Inserting Data
     ----------- */
-    $sql_stmt = "INSERT INTO `requestblood` (`name`, `bloodGroup`, `mobile`, `blooddonatelastdate`, `requiredonatebag`, `district`, `hospitalandaddress`, `socialUrl`, `gender`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql_stmt = "INSERT INTO `requestblood` (`password`, `name`, `bloodGroup`, `mobile`, `blooddonatelastdate`, `requiredonatebag`, `district`, `hospitalandaddress`, `socialUrl`, `gender`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     
     $stmt = $conn->prepare($sql_stmt);
     if ( false===$stmt ) {
@@ -34,7 +42,7 @@
         echo 'Error, Please contact with Administration.';
     }
 
-    $rc = $stmt->bind_param("sssssssss", $name, $bloodGroup, $mobile, $blooddonatelastdate, $requiredonatebag, $district, $hospitalandaddress, $socialUrl, $gender);
+    $rc = $stmt->bind_param("ssssssssss", $password, $name, $bloodGroup, $mobile, $blooddonatelastdate, $requiredonatebag, $district, $hospitalandaddress, $socialUrl, $gender);
     if ( false===$rc ) {
 
         // die('bind_param() failed: ' . htmlspecialchars($stmt->error));

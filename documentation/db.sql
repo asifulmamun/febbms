@@ -37,7 +37,8 @@ CREATE TABLE `febbms`.`requestblood` (
     `requestdate` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP , 
     PRIMARY KEY (`id`)
     ) ENGINE = InnoDB;
-
+-- Request Blood Table - Add New Field
+ALTER TABLE `requestblood` ADD `password` VARCHAR(255) NOT NULL DEFAULT '' AFTER `id`;
 
 -- Users Table
 CREATE TABLE `febbms`.`users` ( 

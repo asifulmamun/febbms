@@ -72,6 +72,18 @@
             </select>
             <span class="notice_red" id="gendernotice"></span>
         </div>
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input name="pass" class="mdl-textfield__input" type="password" id="pass" autocomplete="on">
+            <label class="mdl-textfield__label" for="pass">Enter Password *</label>
+            <span class="notice_red" id="passnotice"></span>
+        </div>
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input name="repass" class="mdl-textfield__input" type="password" id="repass" autocomplete="on">
+            <label class="mdl-textfield__label" for="repass">Re-type Password *</label>
+            <span class="notice_red" id="repassnotice"></span>
+        </div>
     </form>
     <button id="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Submit</button>
 </main>
@@ -275,7 +287,7 @@ function verify(id) {
             return true;
         }
 
-        // Main mobile verifys
+        // Main mobile verify
         if(get_value_form(id).startsWith("0") != true){
 
             notice_id.innerHTML = `Please start with '01'.`;
@@ -326,7 +338,6 @@ function verify(id) {
             return true;
         }
     } /* Required Bag of Blood */
-
 
     // Gender
     if (id == 'gender') {
@@ -384,6 +395,52 @@ function verify(id) {
         }
     } /* Address */
 
+    // Password
+    if (id == 'pass') {
+
+       // Notice ID
+        let notice_id = document.getElementById(id + 'notice');
+
+        if (get_value_form(id).length < 6) {
+
+            notice_id.innerHTML = 'Please enter your password minimum 6';
+            not_valid_form(id);
+        } else {
+
+            notice_id.innerHTML = '';
+
+            if (get_value_form(id) != get_value_form('repass')) {
+
+                document.getElementById('repassnotice').innerHTML = `Password doesn't match with first password.`;
+                not_valid_form(id);
+            } else {
+
+                document.getElementById('repassnotice').innerHTML = '';
+                valid_form();
+                return true;
+            }
+        }                               
+    } // Password
+
+    // Re-password
+    if (id == 'repass') {
+
+        // Notice ID
+        let notice_id = document.getElementById(id + 'notice');
+
+        if (get_value_form(id) != get_value_form('pass')) {
+
+            notice_id.innerHTML = `Password doesn't match with first password.`;
+            not_valid_form(id);
+        } else {
+
+            notice_id.innerHTML = '';
+            valid_form();
+            return true;
+        }
+
+    } // Re-password
+        
 } // Verify
 
 
@@ -397,6 +454,8 @@ function all_trigger() {
     my_event('gender');
     my_event('district');
     my_event('hospitalandaddress');
+    my_event('pass');
+    my_event('repass');
 
 }
 all_trigger();
@@ -411,6 +470,8 @@ submit_button.addEventListener('click', function() {
     verify('gender');
     verify('district');
     verify('hospitalandaddress');
+    verify('pass');
+    verify('repass');
 
 
     // if all true then submit form
