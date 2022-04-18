@@ -15,13 +15,10 @@
 
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Approved - Donors List</h1>
+<h1 class="h3 mb-2 text-gray-800">Blood Request List</h1>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
-    <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary"><a class="btn btn-info" href="./page-total_donors.php">All Donor List</a></h6>
-    </div>
 
     <div id="control">
         <select id="per_page">

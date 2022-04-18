@@ -80,8 +80,8 @@
                 <tfoot>
                     <tr>
                         <th>ID</th>
-                        <th>Name</th>
                         <th>BG</th>
+                        <th>Name</th>
                         <th>District</th>
                         <th>Status</th>
                         <th>Action</th>

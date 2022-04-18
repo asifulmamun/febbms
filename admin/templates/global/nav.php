@@ -23,7 +23,7 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                    aria-controls="collapseTwo">
+                    aria-controls="collapseOne">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Donors</span>
                 </a>
@@ -37,20 +37,37 @@
             </li>
 
             <hr class="sidebar-divider d-none d-md-block">
-
             <!-- Heading -->
             <div class="sidebar-heading">
-                User Settings
+                Blood Requests
             </div>
-
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
                     aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Settings</span>
+                    <span>Request</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a href="./page-blood_request.php" class="collapse-item p_cursor" id="total_donors_btn">Total Blood Request</a>
+                    </div>
+                </div>
+            </li>
+
+            <hr class="sidebar-divider d-none d-md-block">
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                User Settings
+            </div>
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true"
+                    aria-controls="collapseThree">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a href="./page-edit_user.php" class="collapse-item p_cursor" id="total_donors_btn">Edit User</a>
                     </div>
