@@ -1,0 +1,105 @@
+// import global files
+@import './../_global/global';
+
+a{
+    text-decoration: none;
+}
+
+// site heading
+.site_heading{
+    display: block;
+    text-align: center;
+    background-color: $secodary_color;
+    color: $body_bg;
+    padding: 1.2rem 0;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+form#search_become_donor{
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    margin-bottom: 2rem;
+
+    select{
+        background-color: transparent;
+        border: none;
+        padding: 4px 0;
+        width: 100%;
+        border-bottom: 1px solid rgba(0,0,0,.12);
+        color: inherit;
+        font-size: 1.4rem;
+        overflow-x: hidden;
+    }
+
+    button{
+        width: fit-content;
+    }
+}
+
+// table
+table#search_user{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    tbody{
+        tr{
+            td.bloodGroup{
+                span{
+                    background-color: $secodary_color;
+                    color: $body_bg;
+                    font-weight: bold;
+                    border-radius: 5px;
+                    padding: .5rem;
+
+                }
+            }
+            td.district{
+                span{
+                    background-color: $bg_deep;
+                    color: $body_bg;
+                    font-weight: bold;
+                    border-radius: 5px;
+                    padding: .5rem;
+
+                }
+            }
+        }
+    }
+}
+
+// Search donor list
+#card_wrap{
+    position: relative;
+    border: .063rem solid $font_color_light;
+    padding: 1rem;
+    
+    .blood_group{
+        position: absolute;
+        top: .5rem;
+        right: .5rem;
+        color: $secodary_color;
+        font-weight: bold;
+    }
+
+    .card_row{
+        display: flex;
+        padding-top: .5rem;
+
+        .id{
+            background-color: rgba(245, 245, 27, 0.959);
+        }
+
+        .district{
+            color: $primary_color;
+        }
+
+        .card_col{
+            padding-left: .5rem;
+        }
+    }
+}

@@ -1,0 +1,71 @@
+// import global files
+@import './../_global/global';
+
+// site heading
+.site_heading{
+    display: block;
+    text-align: center;
+    background-color: $secodary_color;
+    color: $body_bg;
+    padding: 1.2rem 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+#details{
+
+    table{
+        margin-left: auto;
+        margin-right: auto;
+
+        tr.heading_table{
+
+            margin-bottom: 2rem;
+
+            .blood_group{
+                background-color: $primary_color;
+                color: $body_bg;
+                padding: .5rem .5rem;
+                border-radius: 3px;
+            }
+
+            td.class_center{
+                text-align: center;
+            }
+        }
+
+        tr:nth-child(2){
+            th,td{
+                padding-top: 2rem;
+            }
+        }
+
+        tr:nth-child(3){
+            color: $primary_color;
+        }
+
+        tr{
+            
+            th,td{
+                padding-top: .5rem;
+                padding-bottom: .5rem;
+            }
+
+            th{
+                width: 40%;
+                text-align: left;
+                font-weight: bold;
+            }
+
+            td{
+                padding-left: .5rem;
+            }
+
+            td:last-child{
+                padding-left: .5rem;
+            }
+
+        }
+    }
+
+}

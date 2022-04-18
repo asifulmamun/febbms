@@ -1,0 +1,25 @@
+{
+  "name": "febbms",
+  "version": "1.0.0",
+  "description": "February Blood Management System.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asifulmamun/febbms.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asifulmamun/febbms/issues"
+  },
+  "homepage": "https://github.com/asifulmamun/febbms#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  },
+  "dependencies": {
+    "@splidejs/splide": "^2.4.21"
+  }
+}

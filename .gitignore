@@ -1,0 +1,12 @@
+# connection information
+configuration/conn.php
+
+/init.php
+
+layout/assets/img/uploads
+
+node_modules
+
+*.map
+
+*.log

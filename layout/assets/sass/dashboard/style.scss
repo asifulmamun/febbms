@@ -1,0 +1,86 @@
+// import global files
+@import './../_global/global';
+
+// Notice
+.notice_red{
+    color: red;
+    font-size: 1rem;
+}
+
+// site heading
+.site_heading{
+    display: block;
+    text-align: center;
+    background-color: $secodary_color;
+    color: $body_bg;
+    padding: 1.2rem 0;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+// Dashboard
+nav.dashboard_nav{
+    ul{
+        li{
+            a{
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+#content{
+    .profile{
+        .row_data{
+            display: flex;
+            padding-bottom: .5rem;
+            .col_data_left{
+                font-weight: bold;
+            }
+
+            .col_data_right{
+                padding-left: 1rem;
+            }
+        }
+    }
+
+
+    #edit_profile{
+        form#edit_profile_form{
+            display: flex;
+            flex-direction: column;
+    
+            select{
+                background-color: transparent;
+                border: none;
+                padding: 4px 0;
+                width: 100%;
+                border-bottom: 1px solid rgba(0,0,0,.12);
+                color: inherit;
+                font-size: 1.4rem;
+                overflow-x: hidden;
+            }
+        }
+    }
+
+
+}
+
+#logged_user_notice{
+
+    text-align: center;
+    padding: 2rem;
+    margin: 1rem 1.5rem;
+
+    div{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    span{
+        font-size: 2rem;
+    }
+
+}

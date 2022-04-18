@@ -1,0 +1,37 @@
+.p_cursor{
+    cursor: pointer;
+}
+
+// donor list per page selection
+select#per_page{
+    width: fit-content;
+    padding: .2rem;
+    margin: .5rem;
+}
+
+#control{
+    display: flex;
+
+    .page_count_area{
+        margin: .5rem;
+    }
+    .pagination_btn{
+        margin: .8rem;
+    }
+    .show_by_status{
+        margin: .8rem;
+    }
+}
+
+// donor search
+form#donor_search{
+    margin: .8rem !important;
+
+    select#search_by{
+        margin-right: .5rem;
+    }
+
+    input[type=text]{
+        border: 1px solid !important;
+    }
+}

@@ -1,0 +1,262 @@
+// reset code
+@import './reset';
+
+// material js
+@import './../lib/_material-design-lite/material_icon';
+@import './../lib/_material-design-lite/material.min';
+
+// Google Fonts
+// @import url('//fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+// font-family: 'Hind Siliguri', sans-serif;
+// font-family: 'Roboto Condensed', sans-serif;
+
+/* Global Css
+----------- */
+// color and bg
+$primary_color: #4C3DB1;
+$primary_color_light: #6354c2;
+
+$secodary_color: #FF007C;
+$secodary_color_light: #e64291;
+
+$body_bg_container: #fff;
+$body_bg: #f4f5f8;
+$font_color: #383a3c;
+$font_color_light: #464343a2;
+$border_color: #ccc;
+
+$body_bg_light_deep: #ebecef;
+$body_bg_light_deep_font_color: rgba(0,0,0,.75);
+
+$bg_deep: #222E3D;
+
+// content
+html{
+    font-size: 62.5% !important;
+}
+
+body{
+    color: $font_color;
+    background-color: $body_bg;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+    height: auto;
+    font-size: 1.4rem;
+}
+
+a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.float_left{
+    float: left;
+}
+
+.float_right{
+    float: right;
+}
+
+.text_center{
+    text-align: center;
+}
+
+%a{
+    text-decoration: none;
+}
+
+%aHover{
+    text-decoration: underline;
+}
+
+%li{
+    list-style-type: none;
+}
+
+@mixin transition($time, $type){
+    transition: $time $type;
+    -webkit-transition: $time $type;
+    -moz-transition: $time $type;
+    -ms-transition: $time $type;
+    -o-transition: $time $type;
+}
+
+/* 
+    ------ Center Absolute under relative
+*/
+@mixin cross_browser_transform_translate($top, $left){
+    transform: translate($top, $left);
+    -webkit-transform: translate($top, $left);
+    -moz-transform: translate($top, $left);
+    -ms-transform: translate($top, $left);
+    -o-transform: translate($top, $left);
+}
+// extended mixin to center absolute
+%center_absolute{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    @include cross_browser_transform_translate(-50%, -50%);
+}
+
+// leniear bg color
+@mixin bg_linear_gradient($position, $first_color, $second_color, $third_color, $fourth_color){
+    background-image: linear-gradient($position, $first_color, $second_color, $third_color, $fourth_color);
+    background-image: -webkit-linear-gradient($position, $first_color, $second_color, $third_color, $fourth_color);
+    background-image: -moz-linear-gradient($position, $first_color, $second_color, $third_color, $fourth_color);
+    background-image: -ms-linear-gradient($position, $first_color, $second_color, $third_color, $fourth_color);
+    background-image: -o-linear-gradient($position, $first_color, $second_color, $third_color, $fourth_color);
+}
+
+// box shadow css-3
+@mixin box_shadow($horizontal, $vertical, $blur, $spread, $color){
+    box-shadow: $horizontal $vertical $blur $spread $color;
+    -webkit-box-shadow: $horizontal $vertical $blur $spread $color;
+    -moz-box-shadow: $horizontal $vertical $blur $spread $color;
+    -ms-box-shadow: $horizontal $vertical $blur $spread $color;
+    -o-box-shadow: $horizontal $vertical $blur $spread $color;
+}
+
+// transfor scanle
+@mixin transform_scale($scale){
+    transform: scale($scale);
+    -webkit-transform: scale($scale);
+    -moz-transform: scale($scale);
+    -ms-transform: scale($scale);
+    -o-transform: scale($scale);
+}
+
+// spaces
+.simple_space_top{
+    margin-top: 3.0rem !important;
+}
+
+.section_space{
+    margin: 5.0rem 0;
+}
+
+.row_space{
+    margin: {
+        top: 3.0rem;
+        bottom: 3.0rem;
+    }
+}
+
+.col_space{
+    margin: {
+        top: 3.0rem !important;
+        bottom: 3.0rem !important;
+    }
+}
+
+// Font Color
+.font_color{
+    color: $font_color;
+}
+
+.font_white{
+    color: #ffffff;
+}
+
+// Mobile Menu Icon
+.material-icons{
+    color: $body_bg;
+
+    @media screen and (max-width:767px) {
+        color: $body_bg;
+        background: $secodary_color_light;
+        border-radius: .3rem;
+        box-shadow: .125rem .125rem .313rem 0rem $bg_deep;
+    }
+}
+
+.prev_btton{
+    display: block;
+    margin: 2rem auto;
+    text-align: center;
+
+    a.button{
+        padding: 1rem 1rem;
+        background-color: $primary_color;
+        color: $body_bg_container;
+        text-decoration: none;
+        border-radius: 3px;
+        @include transition(.3s, ease);
+
+        &:hover{
+            background-color: $secodary_color;
+        }
+    }
+}
+
+/* Header Logo
+------------ */
+header.main_menu{
+    overflow: hidden;
+
+    // span{
+    //     all: unset;
+    // }
+}
+
+a.logo{
+    position: relative;
+
+    .logo_bg_animate{
+        position: absolute;
+        top: -1rem;
+        left: 1rem;
+        width: .5rem;
+        height: 0;
+        border-top: 50px solid $body_bg;
+        border-left: 100px solid transparent;
+
+        z-index: -1;
+        -webkit-z-index: -1;
+        -moz-z-index: -1;
+        -ms-z-index: -1;
+        -o-z-index: -1;
+
+        animation-name: logo_bg_animate;
+        -webkit-animation-name: logo_bg_animate;
+        -moz-animation-name: logo_bg_animate;
+        -ms-animation-name: logo_bg_animate;
+        -o-animation-name: logo_bg_animate;
+
+        animation-duration: 4s;
+        -webkit-animation-duration: 4s;
+        -moz-animation-duration: 4s;
+        -ms-animation-duration: 4s;
+        -o-animation-duration: 4s;
+
+        animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+        -moz-animation-iteration-count: infinite;
+        -ms-animation-iteration-count: infinite;
+        -o-animation-iteration-count: infinite;
+
+        animation-direction: alternate;
+        -webkit-animation-direction: alternate;
+        -moz-animation-direction: alternate;
+        -ms-animation-direction: alternate;
+        -o-animation-direction: alternate;
+    }
+
+    img{
+        max-width: 10.938rem;
+        max-height: 6.25rem;
+    }
+}
+
+@keyframes logo_bg_animate{
+    0% {
+        border-top: 0px solid $body_bg;
+        border-left: 0px solid transparent;
+    }
+    100% {
+        border-top: 50px solid $body_bg;
+        border-left: 100px solid transparent;
+    }
+  }

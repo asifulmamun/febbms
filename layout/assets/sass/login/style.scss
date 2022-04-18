@@ -1,0 +1,40 @@
+// import global files
+@import './../_global/global';
+
+// Notice
+.notice_red{
+    color: red;
+}
+.notice_msg{
+    display: flex;
+    justify-content: center;
+}
+
+// site heading
+.site_heading{
+    display: block;
+    text-align: center;
+    background-color: $secodary_color;
+    color: $body_bg;
+    padding: 1.2rem 0;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+main#login{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    
+   form#login_form{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+   }
+   
+   button#button{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+   }
+}
