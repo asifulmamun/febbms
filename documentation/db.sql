@@ -39,6 +39,7 @@ CREATE TABLE `febbms`.`requestblood` (
     ) ENGINE = InnoDB;
 -- Request Blood Table - Add New Field
 ALTER TABLE `requestblood` ADD `password` VARCHAR(255) NOT NULL DEFAULT '' AFTER `id`;
+ALTER TABLE `requestblood` ADD `UpdatedOrAcceptBy` VARCHAR(50) NULL DEFAULT NULL AFTER `requestdate`;
 
 -- Users Table
 CREATE TABLE `febbms`.`users` ( 

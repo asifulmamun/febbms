@@ -70,6 +70,7 @@
                 <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a href="./page-edit_user.php" class="collapse-item p_cursor" id="total_donors_btn">Edit User</a>
+                        <a href="./page-edit_blood_request.php" class="collapse-item p_cursor" id="total_donors_btn">Edit Request</a>
                     </div>
                 </div>
             </li>

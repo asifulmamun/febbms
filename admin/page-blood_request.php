@@ -71,7 +71,7 @@
                         <th>District</th>
                         <th>Status</th>
                         <th>Action</th>
-                        <th>Edit</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -82,7 +82,7 @@
                         <th>District</th>
                         <th>Status</th>
                         <th>Action</th>
-                        <th>Edit</th>
+                        <th>Action</th>
                     </tr>
                 </tfoot>
                 <tbody id="result">
@@ -120,7 +120,7 @@ const show_by_status_1 = document.getElementById('show_by_status_1');
             }
         };
 
-        let get_url = `./process-donor.php?id=${user_id}&status=0`;
+        let get_url = `./process-request.php?id=${user_id}&status=0`;
         xmlhttp.open("GET", get_url, true);
         xmlhttp.send();
 
@@ -140,7 +140,7 @@ const show_by_status_1 = document.getElementById('show_by_status_1');
             }
         };
 
-        let get_url = `./process-donor.php?id=${user_id}&status=1`;
+        let get_url = `./process-request.php?id=${user_id}&status=1`;
         xmlhttp.open("GET", get_url, true);
         xmlhttp.send();
     }
@@ -150,7 +150,7 @@ const show_by_status_1 = document.getElementById('show_by_status_1');
     // Per Page Selection
     const selection_per_page = document.getElementById('per_page');
     selection_per_page.addEventListener('change', (event) => {
-        show_page(`./page-total_donors-list.php?show_by_status=1&per_page=${selection_per_page.value}`);
+        show_page(`./page-blood_request-list.php?show_by_status=1&per_page=${selection_per_page.value}`);
     });
 
     // Pagination Controler
@@ -166,7 +166,7 @@ const show_by_status_1 = document.getElementById('show_by_status_1');
 
         if (count_page.innerText > 0) {
             count_page.innerText = page_count;
-            show_page(`./page-total_donors-list.php?show_by_status=1&per_page=${selection_per_page.value}&page=${page_count}`);
+            show_page(`./page-blood_request-list.php?show_by_status=1&per_page=${selection_per_page.value}&page=${page_count}`);
         }
         
     });
@@ -178,7 +178,7 @@ const show_by_status_1 = document.getElementById('show_by_status_1');
         page_count++;
         count_page.innerText = page_count;
         
-        show_page(`./page-total_donors-list.php?show_by_status=1&per_page=${selection_per_page.value}&page=${page_count}`);
+        show_page(`./page-blood_request-list.php?show_by_status=1&per_page=${selection_per_page.value}&page=${page_count}`);
     });
 
     /* Showong List
@@ -195,7 +195,7 @@ const show_by_status_1 = document.getElementById('show_by_status_1');
         xmlhttp.open("GET", get_url, true);
         xmlhttp.send();
     }
-    show_page(`./page-total_donors-list.php?show_by_status=1&per_page=5`);
+    show_page(`./page-blood_request-list.php?show_by_status=1&per_page=5`);
 </script>
 
 
