@@ -32,7 +32,7 @@
     elseif(isset($_GET['show_by_status']) && !isset($_GET['search_by']) && !isset($_GET['search_keyword'])):
         $show_by_status = $_GET['show_by_status'];
         
-        $sql = "SELECT `id`, `bloodGroup`, `name`, `district`, `requeststatus`, `hospitalandaddress` FROM `requestblood` WHERE `requeststatus` = ? ORDER BY `id` DESC LIMIT ?, ?";
+        $sql = "SELECT * FROM `requestblood` WHERE `requeststatus` = ? ORDER BY `id` DESC LIMIT ?, ?";
         // Getting result_total_donor
         $total_donor = $conn->prepare($sql);
         $total_donor->bind_param('iii', $show_by_status, $count, $per_page);
@@ -57,26 +57,25 @@
 <?php while($details_result_search = $result_total_donor->fetch_assoc()): // fetch result ?>
 <tr>
     <td><?php echo $details_result_search['id']; ?></td>
-    <td><button type="button" class="btn btn-info"><?php echo $details_result_search['bloodGroup']; ?></button></td>
+    <td><button type="button" class="btn btn-info"><?php echo $details_result_search['bloodgroup']; ?></button></td>
     <td><?php echo $details_result_search['name']; ?></td>
     <td><?php 
         echo $details_result_search['hospitalandaddress'] 
         . ' | ' 
-        . $details_result_search['district'] 
-        . '<br>Require ' 
-        . $details_result_search['requiredonatebag']; 
+        . $details_result_search['district']
+        . '<br><span class="text-danger">'
+        . $details_result_search['requiredonatebag']
+        . '</span>'
+        . ' bags blood need before '
+        . '<span class="text-danger">'
+        . date("M d, Y" , strtotime($details_result_search['blooddonatelastdate']))
+        . '<span>';
     ?></td>
-    <td></td>
-    <td id="user_id_<?php echo $details_result_search['id']?>_action_update">
-        <?php
-            if($details_result_search['requeststatus'] == 0):
-                echo '<button onClick="action_update_1(' . $details_result_search['id'] . ')" type="button" class="btn btn-success">Approve</button>';
-            elseif($details_result_search['requeststatus'] == 1):
-                echo '<button onClick="action_update_0(' . $details_result_search['id'] . ')"type="button" class="btn btn-danger">Un Approve</button>';
-            endif;
-        ?>
+    <td>1</td>
+    <td id="user_id_<?php echo $details_result_search['id'];?>_action_update">
+        <a href="./page-edit_blood_request.php?id=<?php echo $details_result_search['id'];?>" class="btn btn-primary">View/Edit</a>
+        <button style="margin-top:.3rem;" onClick="action_update_0('<?php echo $details_result_search['id'];?>')" type="button" class="btn btn-danger" class="btn btn-danger">Delete</button>
     </td>
-    <td><a href="./page-edit_blood_request.php?id=<?php echo $details_result_search['id']; ?>" class="btn btn-primary">View / Edit</a><br><a style="margin-top:.3rem;" href="./#page-edit_blood_request.php?id=<?php echo $details_result_search['id']; ?>" class="btn btn-danger">Delete</a></td>
 </tr>
 <?php endwhile; ?>
 

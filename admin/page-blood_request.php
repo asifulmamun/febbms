@@ -69,8 +69,7 @@
                         <th>BG</th>
                         <th>Name</th>
                         <th>District</th>
-                        <th>Status</th>
-                        <th>Action</th>
+                        <th>View</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -80,8 +79,7 @@
                         <th>BG</th>
                         <th>Name</th>
                         <th>District</th>
-                        <th>Status</th>
-                        <th>Action</th>
+                        <th>View</th>
                         <th>Action</th>
                     </tr>
                 </tfoot>
@@ -112,38 +110,18 @@ const show_by_status_1 = document.getElementById('show_by_status_1');
             if (this.readyState == 4 && this.status == 200) {
 
                 // action button change
-                document.getElementById(`user_id_${this.responseText}_action_update`).innerHTML = `<button id="user_id_${this.responseText}_user_id_action_update" onClick="action_update_1(${this.responseText})" type="button" class="btn btn-success">Approve</button>`;
-
-                // status change
-                document.getElementById(`user_id_${this.responseText}_profile_status`).innerHTML = `<span class="btn btn-warning">Pending</span>`;
+                document.getElementById(`user_id_${this.responseText}_action_update`).innerHTML = `<span>Deleted</span>`;
+                console.log(`Requested ${user_id} id deleted`);
 
             }
         };
 
-        let get_url = `./process-request.php?id=${user_id}&status=0`;
+        let get_url = `./process-request.php?id=${user_id}&action=0`;
         xmlhttp.open("GET", get_url, true);
         xmlhttp.send();
 
     }
 
-    function action_update_1(user_id){
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-
-                // action button change
-                document.getElementById(`user_id_${this.responseText}_action_update`).innerHTML = `<button id="user_id_${this.responseText}_user_id_action_update" onClick="action_update_0(${this.responseText})" type="button" class="btn btn-danger">Un Approve</button>`;
-
-                // status change
-                document.getElementById(`user_id_${this.responseText}_profile_status`).innerHTML = `<span class="btn btn-primary">Approved</span>`;
-
-            }
-        };
-
-        let get_url = `./process-request.php?id=${user_id}&status=1`;
-        xmlhttp.open("GET", get_url, true);
-        xmlhttp.send();
-    }
 
     /* Paginattion
     ---------- */
@@ -181,7 +159,7 @@ const show_by_status_1 = document.getElementById('show_by_status_1');
         show_page(`./page-blood_request-list.php?show_by_status=1&per_page=${selection_per_page.value}&page=${page_count}`);
     });
 
-    /* Showong List
+    /* Showing List
     ----------- */
     function show_page(get_url){
         var xmlhttp = new XMLHttpRequest();

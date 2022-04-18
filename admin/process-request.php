@@ -2,14 +2,18 @@
     require_once './init.php'; // init
     require_once $tpl_config . 'conn.php'; // DB
 
-    $profileStatus = $_GET['status'];
+    $action = $_GET['action']; // action = 0 means delete
     $id = $_GET['id'];
 
-    $sql = "UPDATE `requestblood` SET `profileStatus` = ? WHERE `requestblood`.`id` = ?";
+    if($action == 0){
+        $sql = "DELETE FROM `requestblood` WHERE `requestblood`.`id` = ?";
+    }else{
+        $sql = NULL;
+    }
 
     // Getting action
     $update_info = $conn->prepare($sql);
-    $update_info->bind_param('ii', $profileStatus, $id);
+    $update_info->bind_param('i', $id);
     $update_info->execute();
     echo $id;
 
