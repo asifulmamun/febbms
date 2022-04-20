@@ -143,7 +143,18 @@
                 </table>  
             </div>
         </div>
-    </div>
+    </div><!-- showing result with bootstrap -->
+
+    <!-- Request Or Setttings -->
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+            <div>
+                <span>Do you want to give blood?</span>
+                <a class="button" href="http://#">Donate</a>
+            </div>
+        </div>
+    </div><!-- Request Or Setttings -->
+
 <?php   
     endwhile; // while for fetch row assoc
     $req_data->close(); // Getting Data

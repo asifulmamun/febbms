@@ -160,6 +160,19 @@ a:hover{
     color: #ffffff;
 }
 
+a.button{
+    padding: 1rem 1rem;
+    background-color: $primary_color;
+    color: $body_bg_container;
+    text-decoration: none;
+    border-radius: 3px;
+    @include transition(.3s, ease);
+
+    &:hover{
+        background-color: $secodary_color;
+    }
+}
+
 // Mobile Menu Icon
 .material-icons{
     color: $body_bg;

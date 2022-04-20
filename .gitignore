@@ -10,3 +10,5 @@ node_modules
 *.map
 
 *.log
+
+layout/assets/.sass-cache
