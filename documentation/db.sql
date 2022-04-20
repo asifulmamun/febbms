@@ -1,5 +1,5 @@
 CREATE TABLE `becomedonor` (
-	`id` int(20) NOT NULL,
+	`id` int(20) NOT NULL AUTO_INCREMENT,
 	`profileStatus` int(2) NOT NULL DEFAULT '0',
 	`name` varchar(200) NOT NULL,
 	`bloodGroup` varchar(50) NOT NULL,
@@ -19,7 +19,7 @@ CREATE TABLE `becomedonor` (
 );
 
 CREATE TABLE `requestblood` (
-	`id` int(30) NOT NULL,
+	`id` int(30) NOT NULL AUTO_INCREMENT,
 	`password` varchar(255) NOT NULL,
 	`requeststatus` int(5) NOT NULL DEFAULT '1',
 	`name` varchar(250),
@@ -37,14 +37,14 @@ CREATE TABLE `requestblood` (
 );
 
 CREATE TABLE `users` (
-	`id` int(11) NOT NULL,
+	`id` int(11) NOT NULL AUTO_INCREMENT,
 	`donor_id` (11) NOT NULL,
 	`role` int(11),
 	PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `donate_event` (
-	`id` int(200) NOT NULL,
+	`id` int(200) NOT NULL AUTO_INCREMENT,
 	`id_requestblood` int(20) NOT NULL,
 	`id_becomedonor` int(20) NOT NULL,
 	`status` BINARY(2) NOT NULL DEFAULT '00',
@@ -52,7 +52,7 @@ CREATE TABLE `donate_event` (
 	`req_by_id` int(20) NOT NULL,
 	`req_by` int(2) NOT NULL DEFAULT '0',
 	`accept_date` DATE,
-	`accept_by_id` int(20) NOT NULL,
+	`accept_by_id` int(20),
 	`accept_by` int(2) NOT NULL DEFAULT '1',
 	`approved_by` int(20),
 	PRIMARY KEY (`id`)
@@ -63,3 +63,7 @@ ALTER TABLE `users` ADD CONSTRAINT `users_fk0` FOREIGN KEY (`donor_id`) REFERENC
 ALTER TABLE `donate_event` ADD CONSTRAINT `donate_event_fk0` FOREIGN KEY (`id_requestblood`) REFERENCES `requestblood`(`id`);
 
 ALTER TABLE `donate_event` ADD CONSTRAINT `donate_event_fk1` FOREIGN KEY (`id_becomedonor`) REFERENCES `becomedonor`(`id`);
+
+
+
+

@@ -146,14 +146,21 @@
     </div><!-- showing result with bootstrap -->
 
     <!-- Request Or Setttings -->
-    <div class="mdl-grid">
+    <div class="mdl-grid management_req">
         <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
-            <div>
+            <div class="donate">
                 <span>Do you want to give blood?</span>
-                <a class="button" href="http://#">Donate</a>
+                <a class="button" href="./details-request-blood-process.php?id=<?php echo $id; ?>">Donate</a>
             </div>
         </div>
     </div><!-- Request Or Setttings -->
+
+    <?php
+
+        if(!$_SESSION['id'] == ""){
+            echo 'logged';
+        }
+    ?>
 
 <?php   
     endwhile; // while for fetch row assoc
