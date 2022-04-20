@@ -110,7 +110,7 @@ endif;
                         // UME Verify with password
                         if(m_check() == true || e_check() == true):
                             
-                            echo 'Login Success.';
+                            // echo 'Login Success.';
                             $row = $ume_result->fetch_assoc();
                             
                             class Manager_info{
@@ -153,8 +153,8 @@ endif;
 
                                 // if session create then go to dashboard
                                 if($_SESSION['id']):
-                                    header('Location: ./dashboard.php');
-                                    echo '<script>window.location.href = "./dashboard.php";</script>';
+                                    // header('Location: ./dashboard.php');
+                                    echo '<script>history.go(-2);</script>';
                                     exit;
                                 endif;
 
@@ -198,7 +198,6 @@ endif;
         margin-top: 1rem;
     }
 </style>
-
 <?php
 
 /*

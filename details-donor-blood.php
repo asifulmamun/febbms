@@ -18,14 +18,6 @@ $page_name = $site_name_short . ' - Details of Donor';
 require_once $tpl_global . 'header.php'; // header - config.php & conn.php included
 ?>
 
-<!-- Heading -->
-<div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
-        <div class="site_heading">
-            <?php echo $page_name; ?>
-        </div>
-    </div>
-</div>
 
 <?php
     $id = $_GET['id']; // get id
@@ -38,6 +30,17 @@ require_once $tpl_global . 'header.php'; // header - config.php & conn.php inclu
     if ($result->num_rows === 0) exit('Request Not Founded.');
     while ($row = $result->fetch_assoc()):
 ?>
+
+<!-- Heading -->
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+        <div class="site_heading">
+            <?php echo $page_name . ' ' . $row['name']; ?>
+            <script>window.top.document.title = '<?php echo $page_name . ' ' . $row['name']; // change site title ?>';</script>
+        </div>
+    </div>
+</div>
+
 
     <!-- showing result with bootstrap -->
     <div class="mdl-grid">

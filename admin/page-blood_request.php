@@ -55,8 +55,8 @@
         </form> -->
 
         <div class="show_by_status">
-            <button id="show_by_status_1" type="button" class="btn btn-success">Approved List</button>
-            <button id="show_by_status_0" type="button" class="btn btn-warning">Pending List</button>                           
+            <button id="show_by_status_1" type="button" class="btn btn-success">P</button>
+            <button id="show_by_status_0" type="button" class="btn btn-warning">N</button>                           
         </div>
     </div>
 
@@ -94,11 +94,11 @@
 
 const show_by_status_1 = document.getElementById('show_by_status_1');
     show_by_status_1.addEventListener('click', (event) => {
-        window.location.href = "./page-total_donors-approved.php";
+        // window.location.href = "./page-total_donors-approved.php";
     });
     const show_by_status_0 = document.getElementById('show_by_status_0');
     show_by_status_0.addEventListener('click', (event) => {
-        window.location.href = "./page-total_donors-pending.php";
+        // window.location.href = "./page-total_donors-pending.php";
     });
 
     /* Status Update

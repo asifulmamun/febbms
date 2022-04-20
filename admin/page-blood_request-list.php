@@ -53,7 +53,6 @@
     if($result_total_donor->num_rows == 0): echo '<div class="my-3 alert alert-danger" role="alert">No data found..!</div>'; endif;
 ?>
 
-
 <?php while($details_result_search = $result_total_donor->fetch_assoc()): // fetch result ?>
 <tr>
     <td><?php echo $details_result_search['id']; ?></td>
@@ -78,7 +77,5 @@
     </td>
 </tr>
 <?php endwhile; ?>
-
-
 
 <?php $total_donor->close(); // Getting Data ?>
