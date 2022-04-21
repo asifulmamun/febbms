@@ -158,10 +158,66 @@
 <div class="mdl-grid management_req">
     <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
         <div class="donate">
-            <span>Do you want to give blood?</span>
-            <a class="button" href="./details-request-blood-process.php?id=<?php echo $id; ?>&action=1">Donate</a>
+            <span>Do you want to donate blood?</span>
+            <button id="donate_button"
+                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"
+                type="button">Donate 1 Bag</button>
+            <br><br>
+            <div id="p3" class="mdl-progress mdl-js-progress"></div>
+            <br><br>
+            <span id="total_donor_req" class="mdl-badge" data-badge="0">Total interested for donate</span>
+            <script>
+            document.querySelector('#p3').addEventListener('mdl-componentupgraded', function() {
+                this.MaterialProgress.setProgress(33);
+                this.MaterialProgress.setBuffer(87);
+            });
+            </script>
+            <div id="demo-snackbar-example" class="mdl-js-snackbar mdl-snackbar">
+                <div class="mdl-snackbar__text"></div>
+                <button class="mdl-snackbar__action" type="button"></button>
+            </div>
+            <script>
+            // Donate Button Style and Function
+            (function() {
+                'use strict';
+                var snackbarContainer = document.querySelector('#demo-snackbar-example');
+                var showSnackbarButton = document.querySelector('#donate_button');
+                var handler = function(event) {
+                    showSnackbarButton.style.backgroundColor = '';
+                };
+                showSnackbarButton.addEventListener('click', function() {
+                    'use strict';
+
+                    // After Clicked Donate Button
+                    let get_url = './details-request-blood-process.php?id=<?php echo $id; ?>&action=1';
+                    var xmlhttp = new XMLHttpRequest();
+                    xmlhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            console.log(this.responseText);
+                            action_response(this.responseText); // Update to Snackbar Button Data
+                        }
+                    };
+                    xmlhttp.open("GET", get_url, true);
+                    xmlhttp.send();
+
+                    // Snackbar Button Data
+                    function action_response(response_data) {
+                        showSnackbarButton.style.backgroundColor = '#' +
+                            Math.floor(Math.random() * 0xFFFFFF).toString(16);
+                        var data = {
+                            message: response_data,
+                            timeout: 2000,
+                            actionHandler: handler,
+                            actionText: 'Undo'
+                        };
+                        snackbarContainer.MaterialSnackbar.showSnackbar(data);
+                    }
+                });
+            }());
+            </script>
         </div>
     </div>
+    <br><br><br>
 
     <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
         <table id="requested">
@@ -185,6 +241,12 @@
                 $req_data->execute();
                 $result = $req_data->get_result();
                 if($result->num_rows === 0) exit('Request Not Founded.');
+            ?>
+            <script>
+                const total_donor_req = document.querySelector('#total_donor_req');
+                total_donor_req.dataset.badge=<?php echo $result->num_rows; ?>;
+            </script>
+            <?php
                 $sl_no = 0;
                 while($row = $result->fetch_assoc()):
                     $sl_no+=1;
@@ -201,14 +263,17 @@
                         echo 'Requested';
                     }
                 ?></td>
-                <td><a href="./details-donor-blood.php?id=<?php echo $row['id_becomedonor']; ?>"><?php echo $row['name']; ?></a></td>
+                <td><a
+                        href="./details-donor-blood.php?id=<?php echo $row['id_becomedonor']; ?>"><?php echo $row['name']; ?></a>
+                </td>
                 <td><?php
-                    // Status
+                    // Action
                     if($row['status']==11){
                         echo 'Approved';
                     }elseif($row['status']==1){
                         echo '<a href="#">Reject</a>';
                     }else{
+
                         echo '<a href="#">Accept</a>';
                     }
                 ?></td>

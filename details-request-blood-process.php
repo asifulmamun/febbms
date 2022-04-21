@@ -18,13 +18,13 @@
     // Check logged user or not
     if($_SESSION['id'] == ""):
 
-        die('Please <a href="./login.php">login</a> first.');
+        die('Please login first');
 
     endif;
 
 
     
-    // Data insert / donate if action 0
+    // Data insert / donate if action 1
     if($action == 1){
 
         // Check Donated Count
@@ -34,7 +34,7 @@
         $req_data->bind_param('ii', $id, $_SESSION['id']);
         $req_data->execute();
         $result = $req_data->get_result();
-        if($result->num_rows>2)die('0'); // More than 3 times Donate request not possible
+        if($result->num_rows>2)die("Can't send more than 3 bags request."); // More than 3 times Donate request not possible
         $req_data->close(); // Getting Data
 
         // vairable
@@ -66,12 +66,15 @@
         <p>Error</p>
     </div>
     <?php else: ?>
-    <!-- Success Message -->
-    <div class="messege_success">
-        <p>Requested</p>
-    </div>
+    Donate Request Send 1 Bag.
 <?php
         endif; // error handaling insert execute stmt
         $stmt->close();
     }  // Data insert / donate if action 0
+?>
+
+<?php
+    // Check Blood Request Username and Password for session create
+
+
 ?>
