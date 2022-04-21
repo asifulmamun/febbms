@@ -47,13 +47,13 @@ CREATE TABLE `donate_event` (
 	`id` int(200) NOT NULL AUTO_INCREMENT,
 	`id_requestblood` int(20) NOT NULL,
 	`id_becomedonor` int(20) NOT NULL,
-	`status` BINARY(2) NOT NULL DEFAULT '00',
+	`status` int(2) NOT NULL DEFAULT '00',
 	`req_date` DATETIME DEFAULT CURRENT_TIMESTAMP,
 	`req_by_id` int(20) NOT NULL,
-	`req_by` int(2) NOT NULL DEFAULT '0',
+	`req_by` int(2) NOT NULL DEFAULT '1',
 	`accept_date` DATE,
 	`accept_by_id` int(20),
-	`accept_by` int(2) NOT NULL DEFAULT '1',
+	`accept_by` int(2) NOT NULL DEFAULT '0',
 	`approved_by` int(20),
 	PRIMARY KEY (`id`)
 );

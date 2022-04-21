@@ -1,3 +1,4 @@
+<div style="text-align:center;display:block;margin:3rem auto !important;text-decoration:none;"><span>If you already registered please </span><a class="text_center" href="./login.php">Log In</a><span>&nbsp;from here.</span></div>
 <main id="become_donor">
     <form action="./become-donor.php" method="POST" name="become_donor_form" id="become_donor_form">
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -84,6 +85,7 @@
     </form>
     <button id="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Submit</button>
 </main>
+<div style="text-align:center;display:block;margin:3rem auto !important;text-decoration:none;"><span>If you already registered please </span><a class="text_center" href="./login.php">Log In</a><span>&nbsp;from here.</span></div>
 
 <script>
     

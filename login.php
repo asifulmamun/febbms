@@ -187,6 +187,7 @@ endif;
         </div>
         <button type="submit" id="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Log In</button>
     </form>
+    <a class="text_center" href="./become-donor.php">Registration</a>
     <a class="text_center" href="./forgot_pass.php">Forgot Password?</a>
 </main>
 
