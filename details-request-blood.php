@@ -274,7 +274,7 @@
                         echo '<a href="#">Reject</a>';
                     }else{
 
-                        echo '<a href="#">Accept</a>';
+                        echo '<a href="./details-request-blood-process.php?id='. $id .'&action=2">Accept</a>';
                     }
                 ?></td>
                 <td><?php echo $row['mobile']; ?></td>

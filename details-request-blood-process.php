@@ -2,7 +2,8 @@
 
     /* 
         # This is process page of Request Blood
-        $action = 0 - donate request send
+        $action = 1 - donate request send
+        $action = 2 - Check Session is or not for blood details $_session['req_id']
     */
     require_once './init.php'; // initital file
 
@@ -15,17 +16,15 @@
 
 
 
-    // Check logged user or not
-    if($_SESSION['id'] == ""):
-
-        die('Please login first');
-
-    endif;
-
 
     
     // Data insert / donate if action 1
     if($action == 1){
+
+        // Check logged user or not
+        if($_SESSION['id'] == ""):
+            die('Please login first');
+        endif;
 
         // Check Donated Count
         $req_data = $conn->prepare("SELECT `id_becomedonor`
@@ -74,7 +73,13 @@
 ?>
 
 <?php
-    // Check Blood Request Username and Password for session create
-
+    // Check Blood Request Mobile and Password for session create
+    if($action == 2){
+        if(isset($_SESSION['req_id'])){
+            echo '1';
+        }else{
+            echo '0';
+        }
+    } // action
 
 ?>
